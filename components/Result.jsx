@@ -2,7 +2,6 @@ import react from "react";
 import { Text, Button, View } from "react-native";
 
 const ResultStatement = ({ correctAnswerCount, wrongAnswerCount }) => {
-    console.log("derd, entering result function");
     return (
         <Text>
             You Scored{" "}
