@@ -28,7 +28,6 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
             },
-            operation: "addition"
           }}
         />
         <Stack.Screen
