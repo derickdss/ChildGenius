@@ -1,5 +1,6 @@
 import react from "react";
 import { Text, Button, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const ResultStatement = ({ correctAnswerCount, wrongAnswerCount }) => {
     return (
@@ -13,23 +14,20 @@ const ResultStatement = ({ correctAnswerCount, wrongAnswerCount }) => {
 };
 
 const ResultOptions = ({ reloadPage }) => {
+    const navigation = useNavigation();
     return (
         <View
             style={{
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-evenly",
-                margin: "10px",
+                margin: 10,
             }}
         >
-            <View
-                style={{ flexGrow: 1, marginLeft: "10px", marginRight: "5px" }}
-            >
+            <View style={{ flexGrow: 1, marginLeft: 10, marginRight: 5 }}>
                 <Button title="Retake" onPress={reloadPage} />
             </View>
-            <View
-                style={{ flexGrow: 1, marginLeft: "10px", marginRight: "5px" }}
-            >
+            <View style={{ flexGrow: 1, marginLeft: 10, marginRight: 5 }}>
                 <Button
                     title="Home"
                     onPress={() => navigation.navigate("Home")}
