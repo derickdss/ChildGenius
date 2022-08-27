@@ -171,8 +171,6 @@ export default function QuestionBlock({
                 <View
                     style={{
                         flexDirection: "row",
-                        // position: "absolute",
-                        //top: "20px",
                     }}
                 >
                     <AnswerButtons
@@ -189,8 +187,6 @@ export default function QuestionBlock({
                 <View
                     style={{
                         flexDirection: "row",
-                        // position: "relative",
-                        //top: "10px",
                     }}
                 >
                     <AnswerButtons
