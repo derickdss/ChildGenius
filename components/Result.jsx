@@ -14,7 +14,7 @@ const ResultStatement = ({ correctAnswerCount, wrongAnswerCount }) => {
 
 const ResultOptions = ({ reloadPage }) => {
     return (
-        <div
+        <View
             style={{
                 display: "flex",
                 flexDirection: "row",
@@ -35,7 +35,7 @@ const ResultOptions = ({ reloadPage }) => {
                     onPress={() => navigation.navigate("Home")}
                 />
             </View>
-        </div>
+        </View>
     );
 };
 
