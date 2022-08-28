@@ -16,14 +16,11 @@ export default function QuestionBlock({
 }) {
     const [answerCorrect, setAnswerCorrect] = useState();
     const [answerValue, setAnswerValue] = useState("?");
+    const [answerHighlightStyle, setAnswerHighlightStyle] = useState(null);
     let answerStyle = [
         styles.questionBlock,
         styles.answer,
-        answerValue !== "?"
-            ? answerCorrect
-                ? styles.answerCorrect
-                : styles.answerInCorrect
-            : null,
+        answerHighlightStyle,
     ];
     const messageStatement =
         answerValue !== "?"
@@ -43,6 +40,7 @@ export default function QuestionBlock({
     const numberOfQuestionPerExercise = 10;
 
     const setQuestionAndAnswers = async () => {
+        setAnswerHighlightStyle(null);
         if (operation === "multiplication" || operation === "division") {
             setMaxOperandValue(12);
         }
@@ -121,10 +119,12 @@ export default function QuestionBlock({
         if (answerValue === "?") {
             return;
         } else if (answerValue === answer) {
+            setAnswerHighlightStyle(styles.answerCorrect);
             setAnswerCorrect(true);
             setCorrectAnswerCount(correctAnswerCount + 1);
             return;
         }
+        setAnswerHighlightStyle(styles.answerInCorrect);
         setWrongAnswerCount(wrongAnswerCount + 1);
         setAnswerCorrect(false);
     }, [answerValue]);
